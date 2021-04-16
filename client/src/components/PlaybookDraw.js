@@ -1,7 +1,10 @@
 import React, { useRef } from 'react'
 import { Button } from 'react-bootstrap'
 import CanvasDraw from 'react-canvas-draw'
+import Draggable from 'react-draggable'
 import CoachNav from './CoachNav'
+import './PlaybookDraw.css'
+
 
 const PlaybookDraw = () => {
 
@@ -27,27 +30,45 @@ const PlaybookDraw = () => {
             <div>
                 <CoachNav />
             </div>
-            <Button onClick={handleClick}>
-                Save drawing
-            </Button>
-            <Button onClick={clear}>
-                Clear
-            </Button>
-            <Button onClick={undo}>
-                Undo
-            </Button>
+            <h1>Offense Play Creator</h1>
+            <div style={{marginTop: '1%', marginBottom: '2%'}}>
+                <Button className="save" onClick={handleClick}>
+                    Save drawing
+                </Button>
+                <Button className="clear" onClick={clear}>
+                    Clear
+                </Button>
+                <Button className="undo" onClick={undo}>
+                    Undo
+                </Button>
+            </div>
             <div>
-                <CanvasDraw
-                    brushRadius = {1}
+                <CanvasDraw style={{zIndex: -1}} className="first-playbook"
+                    brushRadius = {5}
                     brushColor = 'black'
                     hideGrid = {false}
                     ref={firstCanvas}
+                    imgSrc="https://murals-weblinc.netdna-ssl.com/product_images/american-football-field-background-31743252/5ec82f54bd89dd0018f77517/zoom.jpg?c=1590177620"
+                    canvasHeight = '800px'
+                    canvasWidth = '1000px'
                 />
             </div>
+
+
+            <div>
+                <Draggable>
+                    <h1 style={{zIndex: 2}}> x </h1>
+                </Draggable>
+            </div>
+
+
             <div style={{marginTop: '5%'}}>
-                <CanvasDraw 
+                <CanvasDraw className="first-playbook"
                     ref={secondCanvas}
-                    disabled={true}
+                    disabled={false}
+                    imgSrc="https://murals-weblinc.netdna-ssl.com/product_images/american-football-field-background-31743252/5ec82f54bd89dd0018f77517/zoom.jpg?c=1590177620"
+                    canvasHeight = '800px'
+                    canvasWidth = '1000px'
                 />
             </div>
 
