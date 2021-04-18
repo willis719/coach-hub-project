@@ -6,6 +6,8 @@ import { Route, Switch } from 'react-router-dom'
 import { BrowserRouter as Router} from 'react-router-dom'
 import Offenseplaybook from './pages/Offenseplaybook';
 import DepthChart from './pages/DepthChart';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 
 function App() {
@@ -21,6 +23,12 @@ function App() {
           </Route>
           <Route path="/DepthChart">
             <DepthChart />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
         </Switch>
     </Router>

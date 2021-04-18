@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import {v4} from 'uuid'
-import lodash from 'lodash'
 import _ from 'lodash'
 import './CreateDepth.css'
 

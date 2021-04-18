@@ -5,7 +5,7 @@ const CoachNav = () => {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="#home">GameIQ</Navbar.Brand>
+                <Navbar.Brand href="/">GameIQ</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -17,7 +17,8 @@ const CoachNav = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">Coach Profile</Nav.Link>
+                        <Nav.Link href="/register">Register</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

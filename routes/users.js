@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const models = require('../models')
+const bcrypt = require('bcrypt')
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -38,6 +41,8 @@ router.post('/register', async (req, res) => {
 
   // create user
   const newCoach = await models.Coach.create({
+    name: req.body.name,
+    team: req.body.team,
     email: req.body.email,
     password: hash
   })
@@ -84,7 +89,7 @@ router.post('/login', async (req, res) => {
   }
 
   // store user info in session
-  req.session.coach = coach;
+  req.session.coach = coach;        
 
   // shorter way to do what starts on line 96
   // const userResponse = user;
@@ -96,6 +101,16 @@ router.post('/login', async (req, res) => {
     email: coach.email,
     updatedAt: coach.updatedAt,
   })
+});
+
+router.get('/logout', (req, res) => {
+  //clear user data from session
+  req.session.coach = null
+
+  //send success response
+  res.json({
+    success: 'Logged out successfully'
+  });
 });
 
 module.exports = router;
