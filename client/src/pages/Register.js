@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap';
 import CoachNav from '../components/CoachNav';
+import { useHistory } from 'react-router-dom'
 
 
 const Register = () => {
@@ -12,6 +13,7 @@ const Register = () => {
         password: '',
         team: ''
     })
+    const history = useHistory()
 
 
 
@@ -36,6 +38,7 @@ const Register = () => {
                 alert(data.error);
             } else {
                 alert('User Registered Successfully')
+                history.push('/login')
             }
         });
     };
@@ -59,11 +62,11 @@ const Register = () => {
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>Full Name</Form.Label>
-                            <Form.Control value={form.name} onChange={handleChange} type="text" placeholder="full name" />
+                            <Form.Control value={form.name} onChange={handleChange} type="text" name="name" placeholder="full name" />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Email</Form.Label>
-                            <Form.Control value={form.email} onChange={handleChange} type="email" placeholder="email@example.com" />
+                            <Form.Control value={form.email} onChange={handleChange} type="email" name="email" placeholder="email@example.com" />
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Password</Form.Label>
@@ -71,14 +74,14 @@ const Register = () => {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Team</Form.Label>
-                            <Form.Control onChange={handleChange} as="select">
-                                <option disabled>default</option>
-                                <option value={form.team}>Falcons</option>
-                                <option value={form.team}>BullDogs</option>
-                                <option value={form.team}>Tigers</option>
+                            <Form.Control onChange={handleChange} value={form.team} name="team" as="select">
+                                <option disabled selected>default</option>
+                                <option>Falcons</option>
+                                <option>BullDogs</option>
+                                <option>Tigers</option>
                             </Form.Control>
                         </Form.Group>
-                        <Button>Login</Button>
+                        <Button type="submit">Register</Button>
                     </Form>
                 </Container>
             </div>

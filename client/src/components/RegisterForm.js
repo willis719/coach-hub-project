@@ -4,7 +4,6 @@ import './RegisterForm.css'
 
 const RegisterForm = () => {
     return (
-        <div>
             <Container>
                 <Form>
                     <Form.Group>
@@ -31,7 +30,6 @@ const RegisterForm = () => {
                     <Button>Login</Button>
                 </Form>
             </Container>
-        </div>
     )
 }
 

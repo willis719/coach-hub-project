@@ -1,17 +1,15 @@
 import React from 'react'
 import CoachNav from '../components/CoachNav'
-import PlaybookDraw from '../components/PlaybookDraw'
 
-
-const Offenseplaybook = () => {
+const Team = () => {
     return (
         <div>
             <div>
                 <CoachNav />
             </div>
-            <PlaybookDraw />
+            <h1>Falcons</h1>
         </div>
     )
 }
 
-export default Offenseplaybook;
+export default Team;

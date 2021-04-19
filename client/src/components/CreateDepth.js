@@ -10,19 +10,69 @@ const CreateDepth = () => {
 
     const item = {
         id: v4(),
-        name: "Clean"
+        name: "Josh Wright"
     }
 
     const item2 = {
         id: v4(),
-        name: "Wash Car"
+        name: "George Ranks"
+    }
+
+    const item3 = {
+        id: v4(),
+        name: "Paul newbit"
+    }
+
+    const item4 = {
+        id: v4(),
+        name: "Jason Taylor"
+    }
+
+    const item5 = {
+        id: v4(),
+        name: "John Wayne"
+    }
+
+    const item6 = {
+        id: v4(),
+        name: "Jack Taylor"
+    }
+
+    const item7 = {
+        id: v4(),
+        name: "Kevin Maas"
+    }
+
+    const item8 = {
+        id: v4(),
+        name: "Donald Driver"
+    }
+
+    const item9 = {
+        id: v4(),
+        name: "Greg Paul"
+    }
+
+    const item10 = {
+        id: v4(),
+        name: "Jim Ringo"
+    }
+
+    const item11 = {
+        id: v4(),
+        name: "Max Mcgee"
     }
 
 
+
     const [state, setState] = useState({
+        "Team": {
+            title: "Team",
+            items: [item, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11]
+        },
         "QB": {
             title: "QB",
-            items: [item, item2]
+            items: []
         },
         "RB": {
             title: "RB",
@@ -30,6 +80,10 @@ const CreateDepth = () => {
         },
         "WR": {
             title: "WR",
+            items: []
+        },
+        "TE": {
+            title: "TE",
             items: []
         }
     })

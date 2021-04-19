@@ -8,6 +8,8 @@ import Offenseplaybook from './pages/Offenseplaybook';
 import DepthChart from './pages/DepthChart';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import ProtectedRoute from './components/ProtectedRoute'
+import Team from './pages/Team';
 
 
 function App() {
@@ -29,6 +31,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/team">
+            <Team />
           </Route>
         </Switch>
     </Router>

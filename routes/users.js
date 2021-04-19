@@ -98,11 +98,13 @@ router.post('/login', async (req, res) => {
   // respond with user info
   res.json({
     id: coach.id,
+    name: coach.name,
+    team: coach.team,
     email: coach.email,
     updatedAt: coach.updatedAt,
   })
 });
-
+  
 router.get('/logout', (req, res) => {
   //clear user data from session
   req.session.coach = null
@@ -111,6 +113,24 @@ router.get('/logout', (req, res) => {
   res.json({
     success: 'Logged out successfully'
   });
+});
+
+// See if coach is currently logged in
+router.get('/current', (req, res) => {
+  const { coach } = req.session;
+  if (coach) {
+    res.json({
+      id: coach.id,
+      name: coach.name,
+      team: coach.team,
+      email: coach.email,
+      updatedAt: coach.updatedAt
+    });
+  } else {
+    res.status(401).json({
+      error: 'Not logged in'
+    });
+  }
 });
 
 module.exports = router;
