@@ -20,21 +20,21 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <ProtectedRoute path="/offensePlaybook">
+          <Route path="/offensePlaybook">
             <Offenseplaybook />
-          </ProtectedRoute>
-          <ProtectedRoute path="/DepthChart">
+          </Route>
+          <Route path="/DepthChart">
             <DepthChart />
-          </ProtectedRoute>
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/register">
             <Register />
           </Route>
-          <ProtectedRoute path="/team">
+          <Route path="/team">
             <Team />
-          </ProtectedRoute>
+          </Route>
         </Switch>
     </Router>
     </div>
