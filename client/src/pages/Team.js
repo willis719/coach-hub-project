@@ -18,11 +18,12 @@ const Team = () => {
                 <CoachNav />
             </div>
             <h1>Falcons</h1>
+            <hr/>
             {
                 players.map((player) => {
                     return(
                         <div key={player.id}>
-                            <h1>{player.name}</h1>
+                            <h1>{player.name}, {player.position}</h1>
                         </div>
                     )
                 })

@@ -8,7 +8,12 @@ router.get('/', async (req, res, next) => {
   
   const play = await models.Playbook.findAll({
     // get all post
+    where: {
+      coachId: req.session.coach.id,
+    },
+    include: [{model: models.Team, attributes: ['name', 'id']}]
   })
+  res.json(play)
 });
 
 

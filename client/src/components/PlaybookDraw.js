@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import CanvasDraw from 'react-canvas-draw'
 import { useHistory } from 'react-router'
@@ -9,6 +9,8 @@ import './PlaybookDraw.css'
 
 const PlaybookDraw = () => {
 
+    
+
     const [form, setForm] = useState({
         playTitle: '',
         playArt: {"lines":[]}
@@ -18,6 +20,7 @@ const PlaybookDraw = () => {
 
     const firstCanvas = useRef(null)
     const secondCanvas = useRef(null)
+    
 
 
 
@@ -106,7 +109,7 @@ const PlaybookDraw = () => {
                 
 
 
-            <div style={{marginTop: '5%'}}>
+            <div style={{marginTop: '5%', marginLeft: '7%'}}>
                 <CanvasDraw className="first-playbook"
                     ref={secondCanvas}
                     disabled={true}
