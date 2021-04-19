@@ -14,13 +14,17 @@ module.exports = {
       position: {
         type: Sequelize.STRING
       },
-      team: {
-        type: Sequelize.STRING
-      },
       CoachId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Coaches',
+          key: 'id'
+        }
+      },
+      TeamId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Teams',
           key: 'id'
         }
       },

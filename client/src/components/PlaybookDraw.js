@@ -11,7 +11,7 @@ const PlaybookDraw = () => {
 
     const [form, setForm] = useState({
         playTitle: '',
-        playArt: '{"lines":}'
+        playArt: {"lines":[]}
     })
 
     const history = useHistory()
@@ -24,15 +24,11 @@ const PlaybookDraw = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const data = firstCanvas.current.getSaveData()
-        console.log(data)
-        secondCanvas.current.loadSaveData(data)
+        
+        secondCanvas.current.loadSaveData(form.playArt)
 
     
-        setForm({
-            playTitle: e.target.value,
-            playArt: JSON.parse(data)
-        })
+    
 
         fetch('/api/v1/playbook', {
             method: 'POST',
@@ -55,21 +51,24 @@ const PlaybookDraw = () => {
     }
     
     
-    
+    const canvasChange = (e) => {
+        setForm({
+            ...form,
+            playArt: e.getSaveData(),
+        })
+    }
     
 
+
+
     const handleChange = (e) => {
-        const data = firstCanvas.current.getSaveData()
         
         setForm({
+            ...form,
             playTitle: e.target.value,
-            playArt: JSON.parse(data)
         })
     }
 
-
-
-    
 
     const clear = () => {
         firstCanvas.current.clear()
@@ -88,7 +87,7 @@ const PlaybookDraw = () => {
                     <Form.Control onChange={handleChange} type="text" name="playTitle" value={form.playTitle} placeholder="Play Name" />
                 </Form.Group>
                 <Form.Group style={{marginLeft: '7%'}}>
-                    <CanvasDraw name="playArt" value={form.playArt} className="first-playbook"
+                    <CanvasDraw onChange={canvasChange} name="playArt" value={form.playArt} className="first-playbook"
                         brushRadius = {1}
                         brushColor = 'black'
                         hideGrid = {false}

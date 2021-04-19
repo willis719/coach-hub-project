@@ -11,13 +11,13 @@ module.exports = {
     },{
       name: 'BullDogs',
       password: 'BullDog45',
-      CoachId: 5,
+      CoachId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
       name: 'Tigers',
       password: 'Tigers45',
-      CoachId: 4,
+      CoachId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     }])

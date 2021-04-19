@@ -9,6 +9,7 @@ const models = require('./models')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const playRouter = require('./routes/playbook')
+const playersRouter = require('./routes/players')
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/', indexRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/playbook', playRouter)
+app.use('/api/v1/players', playersRouter)
 
 
 app.get('*', (req, res) => {
