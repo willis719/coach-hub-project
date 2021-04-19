@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import {v4} from 'uuid'
 import _ from 'lodash'
@@ -8,59 +8,75 @@ import './CreateDepth.css'
 
 const CreateDepth = () => {
 
+
     const item = {
         id: v4(),
-        name: "Josh Wright"
+        name: "Jack Daniels"
     }
 
     const item2 = {
         id: v4(),
-        name: "George Ranks"
+        name: "George Franks"
     }
 
     const item3 = {
         id: v4(),
-        name: "Paul newbit"
+        name: "Johnny Walker"
     }
 
     const item4 = {
         id: v4(),
-        name: "Jason Taylor"
+        name: "Johnny Knox"
     }
 
     const item5 = {
         id: v4(),
-        name: "John Wayne"
+        name: "John Galespe"
     }
 
     const item6 = {
         id: v4(),
-        name: "Jack Taylor"
+        name: "George Franks"
     }
 
     const item7 = {
         id: v4(),
-        name: "Kevin Maas"
+        name: "George Franks"
     }
 
     const item8 = {
         id: v4(),
-        name: "Donald Driver"
+        name: "Johnny Nitas"
     }
 
     const item9 = {
         id: v4(),
-        name: "Greg Paul"
+        name: "Jackie Chun"
     }
 
     const item10 = {
         id: v4(),
-        name: "Jim Ringo"
+        name: "Lamar Thomas"
     }
 
     const item11 = {
         id: v4(),
-        name: "Max Mcgee"
+        name: "Ray Cozi"
+    }
+
+    const item12 = {
+        id: v4(),
+        name: "Jordan Phillips"
+    }
+
+    const item13 = {
+        id: v4(),
+        name: "Lewis Franks"
+    }
+
+    const item14 = {
+        id: v4(),
+        name: "Franklin Jaimes"
     }
 
 
@@ -68,7 +84,7 @@ const CreateDepth = () => {
     const [state, setState] = useState({
         "Team": {
             title: "Team",
-            items: [item, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11]
+            items: [item, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14]
         },
         "QB": {
             title: "QB",
